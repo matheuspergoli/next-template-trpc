@@ -10,7 +10,7 @@ import { SessionProvider } from "@/providers/session"
 import { ThemeProvider } from "@/providers/theme"
 import { ThemeMode } from "@/shared/components/theme-mode"
 import { Routes } from "@/shared/navigation/routes"
-import { TRPCReactProvider } from "@/shared/trpc/react"
+import { TRPCReactProvider } from "@/shared/trpc/client"
 import { buttonVariants } from "@/shared/ui/button"
 
 export const metadata: Metadata = {

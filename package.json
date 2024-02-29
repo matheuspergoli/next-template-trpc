@@ -6,7 +6,7 @@
 	"author": "Matheus Pergoli",
 	"license": "MIT",
 	"scripts": {
-		"dev": "next dev --turbo",
+		"dev": "next dev",
 		"build": "prisma generate && prisma db push && next build",
 		"format": "prettier --write \"src/**/*.{ts,tsx}\"",
 		"clean": "find . -name node_modules -o -name .next -type d -prune | xargs rm -rf",
@@ -16,11 +16,15 @@
 	},
 	"pnpm": {
 		"overrides": {
-			"@tanstack/react-query": "4.36.1"
+			"@tanstack/react-query": "4.36.1",
+			"@tanstack/react-query-devtools": "4.36.1",
+			"@tanstack/eslint-plugin-query": "4.38.0"
 		},
 		"peerDependenciesRules": {
 			"allowedVersions": {
-				"@tanstack/react-query": "4.36.1"
+				"@tanstack/react-query": "4.36.1",
+				"@tanstack/react-query-devtools": "4.36.1",
+				"@tanstack/eslint-plugin-query": "4.38.0"
 			}
 		},
 		"updateConfig": {
@@ -59,9 +63,11 @@
 	},
 	"devDependencies": {
 		"@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+		"@tanstack/eslint-plugin-query": "^4.38.0",
+		"@tanstack/react-query-devtools": "^4.36.1",
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/node": "^20.11.22",
-		"@types/react": "^18.2.60",
+		"@types/node": "^20.11.24",
+		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",
 		"@typescript-eslint/eslint-plugin": "^7.1.0",
 		"@typescript-eslint/parser": "^7.1.0",

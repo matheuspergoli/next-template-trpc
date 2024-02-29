@@ -4,7 +4,7 @@ import React from "react"
 
 import { placeholderBlurhash } from "@/libs/utils"
 import { BlurImage } from "@/shared/components/blur-image"
-import { api } from "@/shared/trpc/react"
+import { api } from "@/shared/trpc/client"
 import { Button } from "@/shared/ui/button"
 import { Input } from "@/shared/ui/input"
 

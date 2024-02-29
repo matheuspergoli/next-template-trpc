@@ -4,7 +4,8 @@ module.exports = {
 		"eslint:recommended",
 		"next/core-web-vitals",
 		"plugin:@typescript-eslint/strict",
-		"plugin:@typescript-eslint/stylistic"
+		"plugin:@typescript-eslint/stylistic",
+		"plugin:@tanstack/eslint-plugin-query/recommended"
 	],
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
