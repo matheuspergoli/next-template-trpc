@@ -4,8 +4,7 @@ module.exports = {
 		"eslint:recommended",
 		"next/core-web-vitals",
 		"plugin:@typescript-eslint/strict",
-		"plugin:@typescript-eslint/stylistic",
-		"plugin:@tanstack/eslint-plugin-query/recommended"
+		"plugin:@typescript-eslint/stylistic"
 	],
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
@@ -27,6 +26,20 @@ module.exports = {
 			callees: ["cn"],
 			config: "tailwind.config.ts"
 		}
+	},
+	rules: {
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				args: "all",
+				argsIgnorePattern: "^_",
+				caughtErrors: "all",
+				caughtErrorsIgnorePattern: "^_",
+				destructuredArrayIgnorePattern: "^_",
+				varsIgnorePattern: "^_",
+				ignoreRestSiblings: true
+			}
+		]
 	},
 	ignorePatterns: [
 		"**/.*.js",
