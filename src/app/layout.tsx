@@ -12,6 +12,7 @@ import { ThemeMode } from "@/shared/components/theme-mode"
 import { Routes } from "@/shared/navigation/routes"
 import { TRPCReactProvider } from "@/shared/trpc/client"
 import { buttonVariants } from "@/shared/ui/button"
+import { Toaster } from "@/shared/ui/sonner"
 
 export const metadata: Metadata = {
 	title: "Template Next.js 14 App Router",
@@ -64,6 +65,7 @@ export default function RootLayout({
 					</header>
 
 					{children}
+					<Toaster />
 				</Provider>
 			</body>
 		</html>

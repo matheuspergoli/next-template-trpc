@@ -14,8 +14,6 @@ export const postRouter = createTRPCRouter({
 			})
 		)
 		.mutation(async ({ ctx, input }) => {
-			await new Promise((resolve) => setTimeout(resolve, 1000))
-
 			return ctx.prisma.post.create({
 				data: {
 					name: input.name
