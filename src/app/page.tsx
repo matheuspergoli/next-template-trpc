@@ -4,7 +4,6 @@ import React from "react"
 
 import { toast } from "sonner"
 
-import { placeholderBlurhash } from "@/libs/utils"
 import { BlurImage } from "@/shared/components/blur-image"
 import { api } from "@/shared/trpc/client"
 import { Badge } from "@/shared/ui/badge"
@@ -16,7 +15,7 @@ export default function Page() {
 
 	const utils = api.useUtils()
 	const { data } = api.post.getAll.useQuery()
-	const { mutate: createPost, isLoading: isLoadingCreate } = api.post.create.useMutation({
+	const { mutate: createPost, isPending: isLoadingCreate } = api.post.create.useMutation({
 		onSuccess() {
 			utils.post.getAll.invalidate()
 		},
@@ -25,7 +24,7 @@ export default function Page() {
 			toast(message)
 		}
 	})
-	const { mutate: deletePost, isLoading: isLoadingDelete } = api.post.delete.useMutation({
+	const { mutate: deletePost, isPending: isLoadingDelete } = api.post.delete.useMutation({
 		onSuccess() {
 			utils.post.getAll.invalidate()
 		}
@@ -87,7 +86,6 @@ export default function Page() {
 					alt="Blurhash"
 					src={"https://avatars.githubusercontent.com/u/14985020?v=4"}
 					placeholder="blur"
-					blurDataURL={placeholderBlurhash}
 					className="w-60 rounded-lg"
 				/>
 			</figure>
