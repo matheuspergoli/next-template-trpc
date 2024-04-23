@@ -9,7 +9,7 @@ import { Provider } from "@/providers/main-provider"
 import { SessionProvider } from "@/providers/session"
 import { ThemeProvider } from "@/providers/theme"
 import { ThemeMode } from "@/shared/components/theme-mode"
-import { Routes } from "@/shared/navigation/routes"
+import { routes } from "@/shared/navigation/routes"
 import { TRPCReactProvider } from "@/shared/trpc/client"
 import { buttonVariants } from "@/shared/ui/button"
 import { Toaster } from "@/shared/ui/sonner"
@@ -38,7 +38,7 @@ export default function RootLayout({
 							<ul className="flex gap-3">
 								<li>
 									<Link
-										href={Routes.home()}
+										href={routes.home()}
 										className={cn(
 											buttonVariants({ variant: "outline" }),
 											"font-semibold"
@@ -49,7 +49,7 @@ export default function RootLayout({
 
 								<li>
 									<Link
-										href={Routes.hello({
+										href={routes.hello({
 											name: "Matheus",
 											search: { surname: "Pergoli" }
 										})}
